@@ -36,6 +36,9 @@ const Home = () => {
             inputCantPjs.current.value = limite
         }
     }
+    const handleEnter = (e) => {
+        if (e.key == 'Enter') { llamado() }
+    }
     const eliminarPj = (nombrePersonaje) => {
         const listaSinPersonaje = personajesRM.filter(e => e.name !== nombrePersonaje)
         setPersonajesRM(listaSinPersonaje)
@@ -60,7 +63,7 @@ const Home = () => {
                 {limite >= 2 &&
                     <button className="btn btn-danger col opacity-75" onClick={handleQuitarPj}>-</button>
                 }
-                <input className='col' type="number" name="" id="" min="3" max="826" ref={inputCantPjs} onChange={handleInputCantPjs} />
+                <input className='col' type="number" name="" id="" min="3" max="826" ref={inputCantPjs} onInput={handleInputCantPjs} onKeyUpCapture={handleEnter} />
                 {isLoading &&
                     <div className="d-flex justify-content-center mt-5">
                         <Loading />
