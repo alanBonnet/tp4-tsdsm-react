@@ -1,8 +1,26 @@
+.card{
+    border-radius: var(--bs-border-radius-pill) !important;
+}
+.card .card-body>*{
+    contain: none;
+}
+
+.card .card-body:hover{
+    display: flex all;
+}
 .card:hover{
     transform:scale(1.05);
+    --bs-bg-opacity: 0.75;
+    background-color: var(--bs-body-bg) !important;
+    border-radius: var(--bs-border-radius-pill) var(--bs-border-radius-pill) var(--bs-card-border-radius) var(--bs-card-border-radius) !important;
     transition:all 1s;
 }
 .card-img-top:hover{
     transform:scale(1.1);
     transition:all 1s;
+}
+
+body{
+    background-image: url('./assets/rick-and-morty.jpg');
+    background-size:100%;
 }
