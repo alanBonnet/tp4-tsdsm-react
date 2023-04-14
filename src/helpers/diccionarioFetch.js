@@ -13,11 +13,7 @@ const getAllPjs = async (urlBase, limite) => {
             const response = await request.json();
             pjs.push(response)
         }
-        return await Promise.all(pjs).then(
-            e => {
-                return e
-            }
-        )
+        return await Promise.all(pjs)
     } catch (error) {
         const request = await fetch(`${urlBase}/${1}`)
         const response = await request.json();
