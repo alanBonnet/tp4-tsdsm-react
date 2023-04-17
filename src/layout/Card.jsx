@@ -9,13 +9,18 @@ const Card = ({ img, title = "title", description = "description", children, cla
     
     const mostrarContenido = () => {
         if (!contenidoMostrado) {
-            cardBody.current.style = "display:block;";
+            cardBody.current.style = "display:block"
+
+            cardBody.current.style = "animation-name:letrasCreciendo;animation-duration:.7s;animation-iteration-count:1";
             setContenidoMostrado(true)
         }
     }
     const ocultarContenido = () => {
         if(contenidoMostrado) {
-            cardBody.current.style = "display:none;";
+            cardBody.current.style = "animation-name:letrasDecreciendo;animation-duration:.7s;animation-iteration-count:1";
+            cardBody.current.style = "display:none"
+            setTimeout(()=>{
+            },650)
             setContenidoMostrado(false)
         }
     }

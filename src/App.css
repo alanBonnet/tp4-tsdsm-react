@@ -37,3 +37,22 @@
 .background>*{
     z-index: 99999;
 }
+
+@keyframes letrasCreciendo {
+    from {
+        font-size: 0rem;
+        visibility: visible;
+    }
+    to {
+        font-size: 1rem;
+    }
+}
+@keyframes letrasDecreciendo {
+    from {
+        font-size: 1rem;
+    }
+    to {
+        font-size: 0rem;
+        visibility: hidden;
+    }
+}
