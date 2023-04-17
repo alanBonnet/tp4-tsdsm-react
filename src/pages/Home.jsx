@@ -18,6 +18,7 @@ const Home = () => {
         setPersonajesRM(personajes)
         if (personajes) {
             setIsLoading(false)
+            document.styleSheets[0].insertRule(".background::before{filter:blur(.3rem);transition:all 2s}",0)
         }
         // personajesRM.forEach(e => { console.log(e); return e })
     }
@@ -70,6 +71,7 @@ const Home = () => {
                     </div>
                 }
             </div>
+            <div className="row scrollable">
             {personajesRM &&
                 personajesRM.map((e, i) => {
                     const nombrePersonaje = e.name
@@ -88,6 +90,7 @@ const Home = () => {
                     )
                 })
             }
+            </div>
         </div >
     )
 }

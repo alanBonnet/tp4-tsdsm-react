@@ -9,12 +9,12 @@ const CardPj = ({ imgPj, nombrePj, estadoPj, origenPj, eliminarPj }) => {
 
     return (
         <Card img={imgPj} classCard='p-2 border-4 bg-info bg-opacity-25'>
-            <h5 className="card-title">{nombrePj}</h5>
+            <h5 className="card-title text-white">{nombrePj}</h5>
             <div className="card-text">
                 <span className='text-muted' >Origen :</span>
-                <p>{origenPj}</p>
+                <p className='text-white'>{origenPj}</p>
                 <span className='text-muted' >Estado :
-                    <p>
+                    <p className='text-white'>
                         {`${estadoPj} `}
                         {iconsEstado}
                     </p>
