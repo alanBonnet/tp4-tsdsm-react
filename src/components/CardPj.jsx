@@ -1,7 +1,11 @@
 import React from 'react'
 import Card from '../layout/Card'
 
-const CardPj = ({ imgPj, nombrePj, estadoPj, origenPj, eliminarPj }) => {
+const CardPj = ({ personaje, eliminarPj }) => {
+    const nombrePj = personaje.name
+    const origenPj = personaje.origin.name == "unknown" ? "Desconocido" : personaje.origin.name;
+    const estadoPj = personaje.status == "unknown" ? "Desconocido" : personaje.status;
+    const imgPj = personaje.image
     const iconsEstado =
         estadoPj == "Alive" ? <i className="bi bi-heart-fill text-success"></i> :
             estadoPj == "Dead" ? <i className="bi bi-heart text-danger"></i> :
