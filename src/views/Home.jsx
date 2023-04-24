@@ -15,12 +15,12 @@ const Home = () => {
         setIsLoading(true)
 
         const personajes = await diccionario.getAllPjs(urlBase, limite)
-        
+
         setPersonajesRM(personajes)
-        
+
         if (personajes) {
             setIsLoading(false)
-            document.styleSheets[0].insertRule(".background::before{filter:blur(.3rem);transition:all 2s}",0)//agrega un estilo a la clase background y pseudo clase before del mismo el atributo filter con valor blur y una transición
+            document.styleSheets[0].insertRule(".background::before{filter:blur(.3rem);transition:all 2s}", 0)//agrega un estilo a la clase background y pseudo clase before del mismo el atributo filter con valor blur y una transición
         }
     }
     // Sección de handles
@@ -31,14 +31,14 @@ const Home = () => {
     const handleQuitarPj = () => {//simple función que decrementa el valor del limite
         if (limite >= 2) {
             setLimite(limite - 1);
-            inputCantPjs.current.value = limite
+
         }
     }
 
     const handleAgregarPj = () => {// simple función que incrementa el valor de limite
         if (limite < 826) {
             setLimite(limite + 1);
-            inputCantPjs.current.value = limite
+
         }
     }
 
@@ -70,7 +70,7 @@ const Home = () => {
                 {limite <= 826 &&
                     <button className="btn btn-success col opacity-75" onClick={handleAgregarPj}>+</button>
                 }
-                <input className='col' type="number" name="" id="" min="3" max="826" ref={inputCantPjs} onInput={handleInputCantPjs} onKeyUpCapture={handleEnter} />
+                <input className='col' type="number" name="" id="" min="3" max="826" ref={inputCantPjs} onInput={handleInputCantPjs} onKeyUpCapture={handleEnter} value={limite} />
                 {isLoading &&
                     <div className="d-flex justify-content-center mt-5">
                         <Loading />
@@ -78,17 +78,17 @@ const Home = () => {
                 }
             </div>
             <div className="row scrollable">
-            {personajesRM &&
-                personajesRM.map((e, i) => {
-                    
-                    return (
-                        <div className="col-3 col-md-2 my-3" key={i}>
-                            <CardPj personaje={e} eliminarPj={eliminarPj} />
-                        </div>
-                        // <li key={i}>{e.name}</li>
-                    )
-                })
-            }
+                {personajesRM &&
+                    personajesRM.map((e, i) => {
+
+                        return (
+                                <div className="col-3 col-md-2 my-3" key={i}>
+                                    <CardPj personaje={e} eliminarPj={eliminarPj} />
+                                </div>
+                            // <li key={i}>{e.name}</li>
+                        )
+                    })
+                }
             </div>
         </div >
     )
